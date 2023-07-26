@@ -1,5 +1,5 @@
 /*
-  Author: 
+  Author: Gianfranco Manieli  
   Learning Intention: The students will understand the difference between the inbuilt setup and loop methods, and understand the basics of the serial monitor'.
   Success Criteria:
     1. I understand the different behaviours of the setup and loop methods
@@ -17,10 +17,13 @@
 
 // The setup function runs once when you press reset or power the board
 void setup() {
-
+  Serial.begin(9600);
+  Serial.println("serial monitor is configured to 9600 baud");
 }
 
 // The loop function runs over and over again forever
 void loop() {
-
+  while(!Serial.available());
+  String gordon = Serial.readString();
+  Serial.println(gordon);
 }
