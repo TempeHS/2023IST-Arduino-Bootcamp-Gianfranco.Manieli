@@ -1,3 +1,4 @@
+
 /*
   Author: 
   Learning Intention: The students will learn how to wire a variable resistor as a pseudo sensor and read analogue data from that PIN.
@@ -16,10 +17,28 @@
     https://github.com/TempeHS/TempeHS_Ardunio_Boilerplate/blob/main/Ardunio_Bootcamp/05.serialRead/Bootcamp-serialRead.png
 */
 
+static unsigned int myVarResistor = A0;
+static unsigned int mySound = A1;
+static unsigned int myLight = A2;
+
 void setup() {
+  Serial.begin(9600);
+  Serial.println("serial monitor configured to 9600");
+  Serial.println("---------------------");
 
 }
 
 void loop() {
+  unsigned int val = analogRead(myVarResistor);
+  unsigned int mysound = analogRead(mySound);
+  unsigned int mylight = analogRead(myLight);
+  Serial.print("PotentiometerValue:");
+  Serial.print (val);
+  Serial.print (",");
+  Serial.println("soundValue:");
+  Serial.print(mysound);
+  Serial.print (",");
+  Serial.println("lightValue:");
+  Serial.print(mylight);
 
 }
