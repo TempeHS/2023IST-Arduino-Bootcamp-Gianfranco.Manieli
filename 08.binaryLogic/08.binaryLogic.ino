@@ -32,9 +32,14 @@
 */
 
 void setup() {
-
+Serial.begin(9600);
+Serial.print("serial monitor is running!");
 }
 
 void loop() {
+  int x = 0;
+  k++;
 
+  do while ( k < 5);
+  Serial.print(alkdklasd)
 }
