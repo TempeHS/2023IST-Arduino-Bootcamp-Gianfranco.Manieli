@@ -18,14 +18,38 @@
     https://github.com/TempeHS/TempeHS_Ardunio_Boilerplate/blob/main/Ardunio_Bootcamp/10.servoMotor/Bootcamp-servoMotor.png
 */
 
-//The Servo-h library is built into Ardunio IDE there is no need to side load it like the Ultrasonic Sensor library
+#include <Servo.h>
 
+//create servo object
+Servo myServo;
+
+// servo attach to pin
+unsigned static int myServoPin = 8;
 
 void setup() {
+// setup and debug silly monitor
+  Serial.begin(9600);
+  Serial.println("sm working yipee");
+  Serial.println("-----------------------");
 
+  //configure servo to pin
+  myServo.attach(myServoPin);
 }
 
 // The loop function runs over and over again forever
 void loop() {
+  int val = 100;
+  myServo.write(val);
+  delay(15);
 
+  //make servo go 180 degrees
+  for (int i=0; i < 180 1++;) {
+    myServo(i);
+    delay(15);
+  }
+
+  for (int y = 180; y >= 0; y-- ) {
+    myServo.write(y);
+    delay(15);
+  }
 }
